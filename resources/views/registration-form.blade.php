@@ -14,64 +14,66 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <form>
+                <form method="POST" action="{{url('/user-add')}}">
+                    {{ method_field('POST') }}
+                    @csrf
                     <h3>Choose Course Preference:</h3>
                     <div class="d-flex justify-content-between">
                         <div>
                             <label>First Preference<span>*</span>:</label>
-                            <select>
+                            <select name="FirstCourse">
                                 <option value="">Select Course</option>
-                                <option value="2">Web App Develop- PHP</option>
-                                <option value="8">Web App Develop-Dot Net</option>
-                                <option value="1">Affiliate Marketing</option>
-                                <option value="13">English &amp; business Communication</option>
-                                <option value="12">Server Administration &amp; Cloud Management</option>
-                                <option value="11">IT support Technical</option>
-                                <option value="10">IT Sales</option>
-                                <option value="9">Customer Support &amp; Service</option>
-                                <option value="7">Practical SEO</option>
-                                <option value="6">Web design</option>
-                                <option value="5">Graphics &amp; Web UI design</option>
-                                <option value="4">Mobile App Develop</option>
-                                <option value="3">Digital Marketing Course</option>
+                                <option value="Web App Develop- PHP">Web App Develop- PHP</option>
+                                <option value="Web App Develop-Dot Net">Web App Develop-Dot Net</option>
+                                <option value="Affiliate Marketing">Affiliate Marketing</option>
+                                <option value="English &amp; business Communication">English &amp; business Communication</option>
+                                <option value="Server Administration &amp; Cloud Management">Server Administration &amp; Cloud Management</option>
+                                <option value="IT support Technical">IT support Technical</option>
+                                <option value="IT Sales">IT Sales</option>
+                                <option value="Customer Support &amp; Service">Customer Support &amp; Service</option>
+                                <option value="Practical SEO">Practical SEO</option>
+                                <option value="Web design">Web design</option>
+                                <option value="Graphics &amp; Web UI design">Graphics &amp; Web UI design</option>
+                                <option value="Mobile App Develop">Mobile App Develop</option>
+                                <option value="Digital Marketing Course">Digital Marketing Course</option>
                             </select>
                         </div>
                         <div>
                             <label>Second Preference<span>*</span>:</label>
-                            <select>
+                            <select name="SecondCourse">
                                 <option value="">Select Course</option>
-                                <option value="2">Web App Develop- PHP</option>
-                                <option value="8">Web App Develop-Dot Net</option>
-                                <option value="1">Affiliate Marketing</option>
-                                <option value="13">English &amp; business Communication</option>
-                                <option value="12">Server Administration &amp; Cloud Management</option>
-                                <option value="11">IT support Technical</option>
-                                <option value="10">IT Sales</option>
-                                <option value="9">Customer Support &amp; Service</option>
-                                <option value="7">Practical SEO</option>
-                                <option value="6">Web design</option>
-                                <option value="5">Graphics &amp; Web UI design</option>
-                                <option value="4">Mobile App Develop</option>
-                                <option value="3">Digital Marketing Course</option>
+                                <option value="Web App Develop- PHP">Web App Develop- PHP</option>
+                                <option value="Web App Develop-Dot Net">Web App Develop-Dot Net</option>
+                                <option value="Affiliate Marketing">Affiliate Marketing</option>
+                                <option value="English &amp; business Communication">English &amp; business Communication</option>
+                                <option value="Server Administration &amp; Cloud Management">Server Administration &amp; Cloud Management</option>
+                                <option value="IT support Technical">IT support Technical</option>
+                                <option value="IT Sales">IT Sales</option>
+                                <option value="Customer Support &amp; Service">Customer Support &amp; Service</option>
+                                <option value="Practical SEO">Practical SEO</option>
+                                <option value="Web design">Web design</option>
+                                <option value="Graphics &amp; Web UI design">Graphics &amp; Web UI design</option>
+                                <option value="Mobile App Develop">Mobile App Develop</option>
+                                <option value="Digital Marketing Course">Digital Marketing Course</option>
                             </select>
                         </div>
                         <div>
                             <label>Third Preference<span>*</span>:</label>
-                            <select>
+                            <select name="ThirdCourse">
                                 <option value="">Select Course</option>
-                                <option value="2">Web App Develop- PHP</option>
-                                <option value="8">Web App Develop-Dot Net</option>
-                                <option value="1">Affiliate Marketing</option>
-                                <option value="13">English &amp; business Communication</option>
-                                <option value="12">Server Administration &amp; Cloud Management</option>
-                                <option value="11">IT support Technical</option>
-                                <option value="10">IT Sales</option>
-                                <option value="9">Customer Support &amp; Service</option>
-                                <option value="7">Practical SEO</option>
-                                <option value="6">Web design</option>
-                                <option value="5">Graphics &amp; Web UI design</option>
-                                <option value="4">Mobile App Develop</option>
-                                <option value="3">Digital Marketing Course</option>
+                                <option value="Web App Develop- PHP">Web App Develop- PHP</option>
+                                <option value="Web App Develop-Dot Net">Web App Develop-Dot Net</option>
+                                <option value="Affiliate Marketing">Affiliate Marketing</option>
+                                <option value="English &amp; business Communication">English &amp; business Communication</option>
+                                <option value="Server Administration &amp; Cloud Management">Server Administration &amp; Cloud Management</option>
+                                <option value="IT support Technical">IT support Technical</option>
+                                <option value="IT Sales">IT Sales</option>
+                                <option value="Customer Support &amp; Service">Customer Support &amp; Service</option>
+                                <option value="Practical SEO">Practical SEO</option>
+                                <option value="Web design">Web design</option>
+                                <option value="Graphics &amp; Web UI design">Graphics &amp; Web UI design</option>
+                                <option value="Mobile App Develop">Mobile App Develop</option>
+                                <option value="Digital Marketing Course">Digital Marketing Course</option>
                             </select>
                         </div>
                     </div>
@@ -79,15 +81,15 @@
                     <div class="d-flex justify-content-between">
                         <div>
                             <label>Name<span>*</span>:</label>
-                            <input type="text">
+                            <input name="name" type="text">
                         </div>
                         <div>
                             <label>Father Name<span>*</span>:</label>
-                            <input type="text">
+                            <input name="fatherName" type="text">
                         </div>
                         <div>
                             <label>Mother Name<span>*</span>:</label>
-                            <input type="text">
+                            <input name="motherName" type="text">
                         </div>
                     </div>
                     <div class="d-flex mt-30 justify-content-between">
@@ -97,6 +99,7 @@
                                 <option value="">Select Gender</option>
                                 <option value="male">Male</option>
                                 <option value="female">Female</option>
+                                <option value="another">Another</option>
                             </select>
                         </div>
                         <div>
@@ -153,7 +156,6 @@
                                 <option value="Vaiphei people">Vaiphei people</option>
                                 <option value="Zo people">Zo people</option>
                                 <option value="Zomi nationalism">Zomi nationalism</option>
-
                             </select>
                         </div>
                         <div>
@@ -167,280 +169,275 @@
                             </select>
                         </div>
                     </div>
-                    <div class="d-flex mt-30 justify-content-between">
-                        <div>
+                    <div class="d-flex mt-30 justify-content-start">
+                        <div class="mr-30">
                             <label>National ID:<span>*</span></label>
-                            <input type="text">
-                        </div>
-                        <div>
-                            <label>National ID:<span>*</span></label>
-                            <input type="text">
+                            <input name="nid" type="number">
                         </div>
                         <div>
                             <label>Date of Birth:<span>*</span></label>
-                            <input type="date">
+                            <input name="birthday" type="date">
                         </div>
                     </div>
-                    <div class="d-flex mt-30 justify-content-start">
-                        <div class="mr-30">
+                    <div class="d-flex mt-30 justify-content-between">
+                        <div>
                             <label>Mobile:<span>*</span></label>
-                            <input type="text">
+                            <input name="mobileNumber" type="number">
                         </div>
                         <div>
                             <label>Email:<span>*</span></label>
-                            <input type="text">
+                            <input name="email" type="email">
                         </div>
-                    </div>
-                    <div class="d-flex mt-30">
-                        <label>Is Employed?</label>
-                        <input type="radio" value="yes">
-                        <h6>Yes</h6>
-                        <input type="radio" value="no">
-                        <h6>No</h6>
+                        <div>
+                            <label>Is Employed?</label>
+                            <select name="employed">
+                                <option value="" selected="selected">Select</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
                     </div>
                     <div class="d-flex mt-30 justify-content-between">
                         <div>
                             <label>Monthly Income:</label>
-                            <input type="text">
+                            <input name="income" type="number">
                         </div>
                         <div>
                             <label>Company Name:</label>
-                            <input type="text">
+                            <input name="companyName" type="text">
                         </div>
                         <div>
                             <label>Designation:</label>
-                            <input type="text">
+                            <input name="designation" type="text">
                         </div>
                     </div>
                     <h3>Present Address:</h3>
                     <div>
                         <label>Address:<span>*</span></label>
-                        <input class="full-width" type="text">
+                        <input name="preAddress" class="full-width" type="text">
                     </div>
                     <div class="d-flex mt-30 justify-content-start">
                         <div class="mr-30">
                             <label>City:<span>*</span></label>
-                            <input type="text">
+                            <input name="preCity" type="text">
                         </div>
                         <div>
                             <label>Post Code:<span>*</span></label>
-                            <input type="text">
+                            <input name="prePostCode" type="number">
                         </div>
                     </div>
                     <div class="d-flex mt-30 justify-content-between">
                         <div>
                             <label>Division:<span>*</span></label>
-                            <select>
+                            <select name="preDivision">
                                 <option value="" selected="selected">Select Division</option>
-                                <option value="5">Barisal</option>
-                                <option value="2">Chittagong</option>
-                                <option value="1">Dhaka</option>
-                                <option value="3">Khulna</option>
-                                <option value="6">Rajshahi</option>
-                                <option value="7">Rangpur</option>
-                                <option value="4">Sylhet</option>
+                                <option value="Barisal">Barisal</option>
+                                <option value="Chittagong">Chittagong</option>
+                                <option value="Dhaka">Dhaka</option>
+                                <option value="Khulna">Khulna</option>
+                                <option value="Rajshahi">Rajshahi</option>
+                                <option value="Rangpur">Rangpur</option>
+                                <option value="Sylhet">Sylhet</option>
                             </select>
                         </div>
                         <div>
                             <label>District:<span>*</span></label>
-                            <select>
+                            <select name="preDistrict">
                                 <option value="0" selected="selected">Select District</option>
-                                <option value="30">bagerhat</option>
-                                <option value="19">Bandarban</option>
-                                <option value="43">Barisal</option>
-                                <option value="45">Bhola</option>
-                                <option value="49">Bogra</option>
-                                <option value="44">Borguna</option>
-                                <option value="20">Brahmanbaria</option>
-                                <option value="50">Chaainawabganj</option>
-                                <option value="21">Chandpur</option>
-                                <option value="18">Chittagong</option>
-                                <option value="31">Chuadanga</option>
-                                <option value="22">Comilla</option>
-                                <option value="23">Cox'sBazar</option>
-                                <option value="1">Dhaka</option>
-                                <option value="58">Dinajpur</option>
-                                <option value="2">Faridpur</option>
-                                <option value="24">Feni</option>
-                                <option value="59">Gaibandha</option>
-                                <option value="3">Gazipur</option>
-                                <option value="4">Gopalganj</option>
-                                <option value="40">Habiganj</option>
-                                <option value="5">Jamalpur</option>
-                                <option value="32">Jessore</option>
-                                <option value="46">Jhalkati</option>
-                                <option value="33">Jhenaidah</option>
-                                <option value="51">Joypurhat</option>
-                                <option value="25">Khagrachari</option>
-                                <option value="29">Khulna</option>
-                                <option value="6">Kishoreganj</option>
-                                <option value="60">Kurigram</option>
-                                <option value="34">Kushtia</option>
-                                <option value="26">Lakshmipur</option>
-                                <option value="61">Lalmonirhat</option>
-                                <option value="7">Madaripur</option>
-                                <option value="35">Magura</option>
-                                <option value="8">Manikganj</option>
-                                <option value="41">Maulivibazar</option>
-                                <option value="36">Meherpur</option>
-                                <option value="9">Munshiganj</option>
-                                <option value="10">Mymensingh</option>
-                                <option value="52">Naogaon</option>
-                                <option value="37">Narail</option>
-                                <option value="11">Narayanganj</option>
-                                <option value="12">Narsingdi</option>
-                                <option value="53">Natore</option>
-                                <option value="13">Netrakona</option>
-                                <option value="62">Nilphamari</option>
-                                <option value="27">Noakhali</option>
-                                <option value="54">Pabna</option>
-                                <option value="63">Panchagarh</option>
-                                <option value="47">Patuakhali</option>
-                                <option value="48">Pirojgonj</option>
-                                <option value="14">Rajbari</option>
-                                <option value="55">Rajshahi</option>
-                                <option value="28">Rangamati</option>
-                                <option value="57">Rangpur</option>
-                                <option value="38">Satkhira</option>
-                                <option value="15">Shariatpur</option>
-                                <option value="16">Sherpur</option>
-                                <option value="56">Sirajganj</option>
-                                <option value="42">Sunamganj</option>
-                                <option value="39">Sylhet</option>
-                                <option value="17">Tangail</option>
-                                <option value="64">Thakurgaon</option>
+                                <option value="bagerhat">bagerhat</option>
+                                <option value="Bandarban">Bandarban</option>
+                                <option value="Barisal">Barisal</option>
+                                <option value="Bhola">Bhola</option>
+                                <option value="Bogra">Bogra</option>
+                                <option value="Borguna">Borguna</option>
+                                <option value="Brahmanbaria">Brahmanbaria</option>
+                                <option value="Chaainawabganj">Chaainawabganj</option>
+                                <option value="Chandpur">Chandpur</option>
+                                <option value="Chittagong">Chittagong</option>
+                                <option value="Chuadanga">Chuadanga</option>
+                                <option value="Comilla">Comilla</option>
+                                <option value="Cox'sBazar">Cox'sBazar</option>
+                                <option value="Dhaka">Dhaka</option>
+                                <option value="Dinajpur">Dinajpur</option>
+                                <option value="Faridpur">Faridpur</option>
+                                <option value="Feni">Feni</option>
+                                <option value="Gaibandha">Gaibandha</option>
+                                <option value="Gazipur">Gazipur</option>
+                                <option value="Gopalganj">Gopalganj</option>
+                                <option value="Habiganj">Habiganj</option>
+                                <option value="Jamalpur">Jamalpur</option>
+                                <option value="Jessore">Jessore</option>
+                                <option value="Jhalkati">Jhalkati</option>
+                                <option value="Jhenaidah">Jhenaidah</option>
+                                <option value="Joypurhat">Joypurhat</option>
+                                <option value="Khagrachari">Khagrachari</option>
+                                <option value="Khulna">Khulna</option>
+                                <option value="Kishoreganj">Kishoreganj</option>
+                                <option value="Kurigram">Kurigram</option>
+                                <option value="Kushtia">Kushtia</option>
+                                <option value="Lakshmipur">Lakshmipur</option>
+                                <option value="Lalmonirhat">Lalmonirhat</option>
+                                <option value="Madaripur">Madaripur</option>
+                                <option value="Magura">Magura</option>
+                                <option value="Manikganj">Manikganj</option>
+                                <option value="Maulivibazar">Maulivibazar</option>
+                                <option value="Maulivibazar">Meherpur</option>
+                                <option value="Munshiganj">Munshiganj</option>
+                                <option value="Mymensingh">Mymensingh</option>
+                                <option value="Naogaon">Naogaon</option>
+                                <option value="Narail">Narail</option>
+                                <option value="Narayanganj">Narayanganj</option>
+                                <option value="Narsingdi">Narsingdi</option>
+                                <option value="Natore">Natore</option>
+                                <option value="Netrakona">Netrakona</option>
+                                <option value="Nilphamari">Nilphamari</option>
+                                <option value="Noakhali">Noakhali</option>
+                                <option value="Pabna">Pabna</option>
+                                <option value="Panchagarh">Panchagarh</option>
+                                <option value="Patuakhali">Patuakhali</option>
+                                <option value="Pirojgonj">Pirojgonj</option>
+                                <option value="Rajbari">Rajbari</option>
+                                <option value="Rajshahi">Rajshahi</option>
+                                <option value="Rangpur">Rangpur</option>
+                                <option value="Satkhira">Satkhira</option>
+                                <option value="Shariatpur">Shariatpur</option>
+                                <option value="Sherpur">Sherpur</option>
+                                <option value="Sirajganj">Sirajganj</option>
+                                <option value="Sunamganj">Sunamganj</option>
+                                <option value="Sylhet">Sylhet</option>
+                                <option value="Tangail">Tangail</option>
+                                <option value="Thakurgaon">Thakurgaon</option>
                             </select>
                         </div>
                         <div>
                             <label>Sub-District:<span>*</span></label>
-                            <select>
-                                <option value="0" selected="selected">Select Upazila</option>
-                                <option value="341">Agailjhara</option>
-                                <option value="342">Babuganj</option>
-                                <option value="343">Bakerganj</option>
-                                <option value="344">Banaripara</option>
-                                <option value="347">Barisal Sadar</option>
-                                <option value="345">Gaurnadi</option>
-                                <option value="346">Hizla</option>
-                                <option value="348">Mehendiganj</option>
-                                <option value="349">Muladi</option>
-                                <option value="350">Wazirpur</option>
+                            <select name="preSubDistrict">
+                                <option value="" selected="selected">Select Upazila</option>
+                                <option value="Agailjhara">Agailjhara</option>
+                                <option value="Babuganj">Babuganj</option>
+                                <option value="Bakerganj">Bakerganj</option>
+                                <option value="Banaripara">Banaripara</option>
+                                <option value="Barisal Sadar">Barisal Sadar</option>
+                                <option value="Gaurnadi">Gaurnadi</option>
+                                <option value="Hizla">Hizla</option>
+                                <option value="Mehendiganj">Mehendiganj</option>
+                                <option value="Muladi">Muladi</option>
+                                <option value="Wazirpur">Wazirpur</option>
                             </select>
                         </div>
                     </div>
                     <h3>Permanent Address:</h3>
                     <div>
                         <label>Address:<span>*</span></label>
-                        <input class="full-width" type="text">
+                        <input name="perAddress" class="full-width" type="text">
                     </div>
                     <div class="d-flex mt-30 justify-content-start">
                         <div class="mr-30">
                             <label>City:<span>*</span></label>
-                            <input type="text">
+                            <input name="perCity" type="text">
                         </div>
                         <div>
                             <label>Post Code:<span>*</span></label>
-                            <input type="text">
+                            <input name="perPostCode" type="number">
                         </div>
                     </div>
                     <div class="d-flex mt-30 justify-content-between">
                         <div>
                             <label>Division:<span>*</span></label>
-                            <select>
+                            <select name="perDivision">
                                 <option value="" selected="selected">Select Division</option>
-                                <option value="5">Barisal</option>
-                                <option value="2">Chittagong</option>
-                                <option value="1">Dhaka</option>
-                                <option value="3">Khulna</option>
-                                <option value="6">Rajshahi</option>
-                                <option value="7">Rangpur</option>
-                                <option value="4">Sylhet</option>
+                                <option value="Barisal">Barisal</option>
+                                <option value="Chittagong">Chittagong</option>
+                                <option value="Dhaka">Dhaka</option>
+                                <option value="Khulna">Khulna</option>
+                                <option value="Rajshahi">Rajshahi</option>
+                                <option value="Rangpur">Rangpur</option>
+                                <option value="Sylhet">Sylhet</option>
                             </select>
                         </div>
                         <div>
                             <label>District:<span>*</span></label>
-                            <select>
+                            <select name="perDistrict">
                                 <option value="0" selected="selected">Select District</option>
-                                <option value="30">bagerhat</option>
-                                <option value="19">Bandarban</option>
-                                <option value="43">Barisal</option>
-                                <option value="45">Bhola</option>
-                                <option value="49">Bogra</option>
-                                <option value="44">Borguna</option>
-                                <option value="20">Brahmanbaria</option>
-                                <option value="50">Chaainawabganj</option>
-                                <option value="21">Chandpur</option>
-                                <option value="18">Chittagong</option>
-                                <option value="31">Chuadanga</option>
-                                <option value="22">Comilla</option>
-                                <option value="23">Cox'sBazar</option>
-                                <option value="1">Dhaka</option>
-                                <option value="58">Dinajpur</option>
-                                <option value="2">Faridpur</option>
-                                <option value="24">Feni</option>
-                                <option value="59">Gaibandha</option>
-                                <option value="3">Gazipur</option>
-                                <option value="4">Gopalganj</option>
-                                <option value="40">Habiganj</option>
-                                <option value="5">Jamalpur</option>
-                                <option value="32">Jessore</option>
-                                <option value="46">Jhalkati</option>
-                                <option value="33">Jhenaidah</option>
-                                <option value="51">Joypurhat</option>
-                                <option value="25">Khagrachari</option>
-                                <option value="29">Khulna</option>
-                                <option value="6">Kishoreganj</option>
-                                <option value="60">Kurigram</option>
-                                <option value="34">Kushtia</option>
-                                <option value="26">Lakshmipur</option>
-                                <option value="61">Lalmonirhat</option>
-                                <option value="7">Madaripur</option>
-                                <option value="35">Magura</option>
-                                <option value="8">Manikganj</option>
-                                <option value="41">Maulivibazar</option>
-                                <option value="36">Meherpur</option>
-                                <option value="9">Munshiganj</option>
-                                <option value="10">Mymensingh</option>
-                                <option value="52">Naogaon</option>
-                                <option value="37">Narail</option>
-                                <option value="11">Narayanganj</option>
-                                <option value="12">Narsingdi</option>
-                                <option value="53">Natore</option>
-                                <option value="13">Netrakona</option>
-                                <option value="62">Nilphamari</option>
-                                <option value="27">Noakhali</option>
-                                <option value="54">Pabna</option>
-                                <option value="63">Panchagarh</option>
-                                <option value="47">Patuakhali</option>
-                                <option value="48">Pirojgonj</option>
-                                <option value="14">Rajbari</option>
-                                <option value="55">Rajshahi</option>
-                                <option value="28">Rangamati</option>
-                                <option value="57">Rangpur</option>
-                                <option value="38">Satkhira</option>
-                                <option value="15">Shariatpur</option>
-                                <option value="16">Sherpur</option>
-                                <option value="56">Sirajganj</option>
-                                <option value="42">Sunamganj</option>
-                                <option value="39">Sylhet</option>
-                                <option value="17">Tangail</option>
-                                <option value="64">Thakurgaon</option>
+                                <option value="bagerhat">bagerhat</option>
+                                <option value="Bandarban">Bandarban</option>
+                                <option value="Barisal">Barisal</option>
+                                <option value="Bhola">Bhola</option>
+                                <option value="Bogra">Bogra</option>
+                                <option value="Borguna">Borguna</option>
+                                <option value="Brahmanbaria">Brahmanbaria</option>
+                                <option value="Chaainawabganj">Chaainawabganj</option>
+                                <option value="Chandpur">Chandpur</option>
+                                <option value="Chittagong">Chittagong</option>
+                                <option value="Chuadanga">Chuadanga</option>
+                                <option value="Comilla">Comilla</option>
+                                <option value="Cox'sBazar">Cox'sBazar</option>
+                                <option value="Dhaka">Dhaka</option>
+                                <option value="Dinajpur">Dinajpur</option>
+                                <option value="Faridpur">Faridpur</option>
+                                <option value="Feni">Feni</option>
+                                <option value="Gaibandha">Gaibandha</option>
+                                <option value="Gazipur">Gazipur</option>
+                                <option value="Gopalganj">Gopalganj</option>
+                                <option value="Habiganj">Habiganj</option>
+                                <option value="Jamalpur">Jamalpur</option>
+                                <option value="Jessore">Jessore</option>
+                                <option value="Jhalkati">Jhalkati</option>
+                                <option value="Jhenaidah">Jhenaidah</option>
+                                <option value="Joypurhat">Joypurhat</option>
+                                <option value="Khagrachari">Khagrachari</option>
+                                <option value="Khulna">Khulna</option>
+                                <option value="Kishoreganj">Kishoreganj</option>
+                                <option value="Kurigram">Kurigram</option>
+                                <option value="Kushtia">Kushtia</option>
+                                <option value="Lakshmipur">Lakshmipur</option>
+                                <option value="Lalmonirhat">Lalmonirhat</option>
+                                <option value="Madaripur">Madaripur</option>
+                                <option value="Magura">Magura</option>
+                                <option value="Manikganj">Manikganj</option>
+                                <option value="Maulivibazar">Maulivibazar</option>
+                                <option value="Maulivibazar">Meherpur</option>
+                                <option value="Munshiganj">Munshiganj</option>
+                                <option value="Mymensingh">Mymensingh</option>
+                                <option value="Naogaon">Naogaon</option>
+                                <option value="Narail">Narail</option>
+                                <option value="Narayanganj">Narayanganj</option>
+                                <option value="Narsingdi">Narsingdi</option>
+                                <option value="Natore">Natore</option>
+                                <option value="Netrakona">Netrakona</option>
+                                <option value="Nilphamari">Nilphamari</option>
+                                <option value="Noakhali">Noakhali</option>
+                                <option value="Pabna">Pabna</option>
+                                <option value="Panchagarh">Panchagarh</option>
+                                <option value="Patuakhali">Patuakhali</option>
+                                <option value="Pirojgonj">Pirojgonj</option>
+                                <option value="Rajbari">Rajbari</option>
+                                <option value="Rajshahi">Rajshahi</option>
+                                <option value="Rangpur">Rangpur</option>
+                                <option value="Satkhira">Satkhira</option>
+                                <option value="Shariatpur">Shariatpur</option>
+                                <option value="Sherpur">Sherpur</option>
+                                <option value="Sirajganj">Sirajganj</option>
+                                <option value="Sunamganj">Sunamganj</option>
+                                <option value="Sylhet">Sylhet</option>
+                                <option value="Tangail">Tangail</option>
+                                <option value="Thakurgaon">Thakurgaon</option>
                             </select>
                         </div>
                         <div>
                             <label>Sub-District:<span>*</span></label>
-                            <select>
-                                <option value="0" selected="selected">Select Upazila</option>
-                                <option value="341">Agailjhara</option>
-                                <option value="342">Babuganj</option>
-                                <option value="343">Bakerganj</option>
-                                <option value="344">Banaripara</option>
-                                <option value="347">Barisal Sadar</option>
-                                <option value="345">Gaurnadi</option>
-                                <option value="346">Hizla</option>
-                                <option value="348">Mehendiganj</option>
-                                <option value="349">Muladi</option>
-                                <option value="350">Wazirpur</option>
+                            <select name="perSubDistrict">
+                                <option value="" selected="selected">Select Upazila</option>
+                                <option value="Agailjhara">Agailjhara</option>
+                                <option value="Babuganj">Babuganj</option>
+                                <option value="Bakerganj">Bakerganj</option>
+                                <option value="Banaripara">Banaripara</option>
+                                <option value="Barisal Sadar">Barisal Sadar</option>
+                                <option value="Gaurnadi">Gaurnadi</option>
+                                <option value="Hizla">Hizla</option>
+                                <option value="Mehendiganj">Mehendiganj</option>
+                                <option value="Muladi">Muladi</option>
+                                <option value="Wazirpur">Wazirpur</option>
                             </select>
                         </div>
                     </div>
@@ -448,33 +445,33 @@
                     <div class="d-flex mt-30 justify-content-start">
                         <div class="mr-30">
                             <label>Level of Education:<span>*</span></label>
-                            <input type="text">
+                            <input name="education" type="text">
                         </div>
                         <div>
                             <label>Institute:<span>*</span></label>
-                            <input type="text">
+                            <input name="institute" type="text">
                         </div>
                     </div>
                     <div class="d-flex mt-30 justify-content-start">
                         <div class="mr-30">
                             <label>Subject:<span>*</span></label>
-                            <input type="text">
+                            <input name="subject" type="text">
                         </div>
                         <div>
                             <label>Year:<span>*</span></label>
-                            <input type="text">
+                            <input name="year" type="number">
                         </div>
                     </div>
                     <h3>Photo:</h3>
                     <div class="input_holder">
-                        <input type="file"><br>
+                        <input name="file" type="file"><br>
                         <span>Image size should be 300x300 (Max 100KB) in JPG Format </span>
                     </div>
                     <h3>Security:</h3>
                     <div class="d-flex mt-30 justify-content-start">
                         <div class="mr-30">
                             <label>Type the code:<span>*</span></label>
-                            <input type="text">
+                            <input name="code" type="text">
                         </div>
                         <div class="mt-30">
                             <img src="http://seip.bitm.org.bd/captcha/1606645987.6277.jpg" width="120" height="35" alt="recapth-code">

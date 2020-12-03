@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\models\seipregistration;
+
 class UserController extends Controller
 {
     public function Home()
@@ -25,5 +27,10 @@ class UserController extends Controller
     public function RegistrationForm()
     {
         return view('registration-form');
+    }
+    public function store(Request $request)
+    {
+        seipregistration::create($request->all());
+        return redirect('/');
     }
 }

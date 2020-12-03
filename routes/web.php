@@ -20,3 +20,4 @@ Route::get('/course-details', [UserController::class, 'CourseDetails']);
 Route::get('/course-outline', [UserController::class, 'CourseOutline']);
 Route::get('/admission-process', [UserController::class, 'AdmissionProcess']);
 Route::get('/registration', [UserController::class, 'RegistrationForm']);
+Route::post('/user-add', [UserController::class, 'store']);
