@@ -37,6 +37,7 @@
                                 <option value="Mobile App Develop">Mobile App Develop</option>
                                 <option value="Digital Marketing Course">Digital Marketing Course</option>
                             </select>
+                            <span class="error">@error('FirstCourse'){{$message}}@enderror</span>
                         </div>
                         <div>
                             <label>Second Preference<span>*</span>:</label>
@@ -56,6 +57,7 @@
                                 <option value="Mobile App Develop">Mobile App Develop</option>
                                 <option value="Digital Marketing Course">Digital Marketing Course</option>
                             </select>
+                            <span class="error">@error('SecondCourse'){{$message}}@enderror</span>
                         </div>
                         <div>
                             <label>Third Preference<span>*</span>:</label>
@@ -75,6 +77,7 @@
                                 <option value="Mobile App Develop">Mobile App Develop</option>
                                 <option value="Digital Marketing Course">Digital Marketing Course</option>
                             </select>
+                            <span class="error">@error('ThirdCourse'){{$message}}@enderror</span>
                         </div>
                     </div>
                     <h3>Personal Information:</h3>
@@ -82,14 +85,17 @@
                         <div>
                             <label>Name<span>*</span>:</label>
                             <input name="name" type="text">
+                            <span class="error">@error('name'){{$message}}@enderror</span>
                         </div>
                         <div>
                             <label>Father Name<span>*</span>:</label>
                             <input name="fatherName" type="text">
+                            <span class="error">@error('fatherName'){{$message}}@enderror</span>
                         </div>
                         <div>
                             <label>Mother Name<span>*</span>:</label>
                             <input name="motherName" type="text">
+                            <span class="error">@error('motherName'){{$message}}@enderror</span>
                         </div>
                     </div>
                     <div class="d-flex mt-30 justify-content-between">
@@ -101,6 +107,7 @@
                                 <option value="female">Female</option>
                                 <option value="another">Another</option>
                             </select>
+                            <span class="error">@error('gender'){{$message}}@enderror</span>
                         </div>
                         <div>
                             <label>Ethnic Group:<span>*</span></label>
@@ -157,6 +164,7 @@
                                 <option value="Zo people">Zo people</option>
                                 <option value="Zomi nationalism">Zomi nationalism</option>
                             </select>
+                            <span class="error">@error('ethnic_group'){{$message}}@enderror</span>
                         </div>
                         <div>
                             <label>Religion:<span>*</span></label>
@@ -167,69 +175,78 @@
                                 <option value="Buddhism">Buddhism</option>
                                 <option value="Christianity">Christianity</option>
                             </select>
+                            <span class="error">@error('religion'){{$message}}@enderror</span>
                         </div>
                     </div>
                     <div class="d-flex mt-30 justify-content-start">
                         <div class="mr-30">
-                            <label>National ID:<span>*</span></label>
+                            <label>National ID/ Birth ID:<span>*</span></label>
                             <input name="nid" type="number">
+                            <span class="error">@error('nid'){{$message}}@enderror</span>
                         </div>
                         <div>
                             <label>Date of Birth:<span>*</span></label>
                             <input name="birthday" type="date">
+                            <span class="error">@error('birthday'){{$message}}@enderror</span>
                         </div>
                     </div>
                     <div class="d-flex mt-30 justify-content-between">
                         <div>
                             <label>Mobile:<span>*</span></label>
                             <input name="mobileNumber" type="number">
+                            <span class="error">@error('mobileNumber'){{$message}}@enderror</span>
                         </div>
                         <div>
                             <label>Email:<span>*</span></label>
                             <input name="email" type="email">
+                            <span class="error">@error('email'){{$message}}@enderror</span>
                         </div>
-                        <div>
-                            <label>Is Employed?</label>
-                            <select name="employed">
-                                <option value="" selected="selected">Select</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </select>
+                        <div class="d-flex mt-45">
+                            <label>Is Employed?<span>*</span></label>
+                            <input type="radio" name="employee" value="yes"  onclick="show_company_info('yes')">Yes
+                            <input type="radio" name="employee" value="no" onclick="show_company_info('no')">No
+                            <span class="error">@error('employee'){{$message}}@enderror</span>
                         </div>
                     </div>
-                    <div class="d-flex mt-30 justify-content-between">
+                    <div id="company_info" class="mt-30 justify-content-between">
                         <div>
                             <label>Monthly Income:</label>
                             <input name="income" type="number">
+                            <!-- <span class="error">@error('income'){{$message}}@enderror</span> -->
                         </div>
                         <div>
                             <label>Company Name:</label>
                             <input name="companyName" type="text">
+                            <!-- <span class="error">@error('companyName'){{$message}}@enderror</span> -->
                         </div>
                         <div>
                             <label>Designation:</label>
                             <input name="designation" type="text">
+                            <!-- <span class="error">@error('designation'){{$message}}@enderror</span> -->
                         </div>
                     </div>
                     <h3>Present Address:</h3>
                     <div>
                         <label>Address:<span>*</span></label>
                         <input name="preAddress" class="full-width" type="text">
+                        <span class="error">@error('preAddress'){{$message}}@enderror</span>
                     </div>
                     <div class="d-flex mt-30 justify-content-start">
                         <div class="mr-30">
                             <label>City:<span>*</span></label>
                             <input name="preCity" type="text">
+                            <span class="error">@error('preCity'){{$message}}@enderror</span>
                         </div>
                         <div>
                             <label>Post Code:<span>*</span></label>
                             <input name="prePostCode" type="number">
+                            <span class="error">@error('prePostCode'){{$message}}@enderror</span>
                         </div>
                     </div>
                     <div class="d-flex mt-30 justify-content-between">
                         <div>
                             <label>Division:<span>*</span></label>
-                            <select name="preDivision">
+                            <select name="preDivision"  id="pre_division">
                                 <option value="" selected="selected">Select Division</option>
                                 <option value="Barisal">Barisal</option>
                                 <option value="Chittagong">Chittagong</option>
@@ -239,11 +256,12 @@
                                 <option value="Rangpur">Rangpur</option>
                                 <option value="Sylhet">Sylhet</option>
                             </select>
+                            <span class="error">@error('preDivision'){{$message}}@enderror</span>
                         </div>
                         <div>
                             <label>District:<span>*</span></label>
-                            <select name="preDistrict">
-                                <option value="0" selected="selected">Select District</option>
+                            <select name="preDistrict" id="pre_district">
+                                <option value="" selected="selected">Select District</option>
                                 <option value="bagerhat">bagerhat</option>
                                 <option value="Bandarban">Bandarban</option>
                                 <option value="Barisal">Barisal</option>
@@ -308,10 +326,11 @@
                                 <option value="Tangail">Tangail</option>
                                 <option value="Thakurgaon">Thakurgaon</option>
                             </select>
+                            <span class="error">@error('preDistrict'){{$message}}@enderror</span>
                         </div>
                         <div>
                             <label>Sub-District:<span>*</span></label>
-                            <select name="preSubDistrict">
+                            <select name="preSubDistrict" id="pre_sub_district">
                                 <option value="" selected="selected">Select Upazila</option>
                                 <option value="Agailjhara">Agailjhara</option>
                                 <option value="Babuganj">Babuganj</option>
@@ -324,21 +343,25 @@
                                 <option value="Muladi">Muladi</option>
                                 <option value="Wazirpur">Wazirpur</option>
                             </select>
+                            <span class="error">@error('preSubDistrict'){{$message}}@enderror</span>
                         </div>
                     </div>
                     <h3>Permanent Address:</h3>
                     <div>
                         <label>Address:<span>*</span></label>
                         <input name="perAddress" class="full-width" type="text">
+                        <span class="error">@error('perAddress'){{$message}}@enderror</span>
                     </div>
                     <div class="d-flex mt-30 justify-content-start">
                         <div class="mr-30">
                             <label>City:<span>*</span></label>
                             <input name="perCity" type="text">
+                            <span class="error">@error('perCity'){{$message}}@enderror</span>
                         </div>
                         <div>
                             <label>Post Code:<span>*</span></label>
                             <input name="perPostCode" type="number">
+                            <span class="error">@error('perPostCode'){{$message}}@enderror</span>
                         </div>
                     </div>
                     <div class="d-flex mt-30 justify-content-between">
@@ -354,11 +377,12 @@
                                 <option value="Rangpur">Rangpur</option>
                                 <option value="Sylhet">Sylhet</option>
                             </select>
+                            <span class="error">@error('perDivision'){{$message}}@enderror</span>
                         </div>
                         <div>
                             <label>District:<span>*</span></label>
                             <select name="perDistrict">
-                                <option value="0" selected="selected">Select District</option>
+                                <option value="" selected="selected">Select District</option>
                                 <option value="bagerhat">bagerhat</option>
                                 <option value="Bandarban">Bandarban</option>
                                 <option value="Barisal">Barisal</option>
@@ -423,6 +447,7 @@
                                 <option value="Tangail">Tangail</option>
                                 <option value="Thakurgaon">Thakurgaon</option>
                             </select>
+                            <span class="error">@error('perDistrict'){{$message}}@enderror</span>
                         </div>
                         <div>
                             <label>Sub-District:<span>*</span></label>
@@ -439,6 +464,7 @@
                                 <option value="Muladi">Muladi</option>
                                 <option value="Wazirpur">Wazirpur</option>
                             </select>
+                            <span class="error">@error('perSubDistrict'){{$message}}@enderror</span>
                         </div>
                     </div>
                     <h3>Highest Academic Achievement:</h3>
@@ -446,32 +472,38 @@
                         <div class="mr-30">
                             <label>Level of Education:<span>*</span></label>
                             <input name="education" type="text">
+                            <span class="error">@error('education'){{$message}}@enderror</span>
                         </div>
                         <div>
                             <label>Institute:<span>*</span></label>
                             <input name="institute" type="text">
+                            <span class="error">@error('institute'){{$message}}@enderror</span>
                         </div>
                     </div>
                     <div class="d-flex mt-30 justify-content-start">
                         <div class="mr-30">
                             <label>Subject:<span>*</span></label>
                             <input name="subject" type="text">
+                            <span class="error">@error('subject'){{$message}}@enderror</span>
                         </div>
                         <div>
                             <label>Year:<span>*</span></label>
                             <input name="year" type="number">
+                            <span class="error">@error('year'){{$message}}@enderror</span>
                         </div>
                     </div>
                     <h3>Photo:</h3>
                     <div class="input_holder">
                         <input name="file" type="file"><br>
                         <span>Image size should be 300x300 (Max 100KB) in JPG Format </span>
+                        <span class="error">@error('file'){{$message}}@enderror</span>
                     </div>
                     <h3>Security:</h3>
                     <div class="d-flex mt-30 justify-content-start">
                         <div class="mr-30">
                             <label>Type the code:<span>*</span></label>
                             <input name="code" type="text">
+                            <span class="error">@error('code'){{$message}}@enderror</span>
                         </div>
                         <div class="mt-30">
                             <img src="http://seip.bitm.org.bd/captcha/1606645987.6277.jpg" width="120" height="35" alt="recapth-code">
@@ -481,13 +513,15 @@
                         </a>
                     </div>
                     <div class="d-flex justify-content-center mt-30">
-                        <button type="submit">Reset</button>
+                        <!-- <button type="submit">Reset</button> -->
                         <button type="submit">Save</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-</body>
 
+<script type="text/javascript" src="{{asset('assets/js/jquery.js')}}"></script>
+<script type="text/javascript" src="{{asset('assets/js/index.js')}}"></script>
+</body>
 </html>

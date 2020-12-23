@@ -21,3 +21,5 @@ Route::get('/course-outline', [UserController::class, 'CourseOutline']);
 Route::get('/admission-process', [UserController::class, 'AdmissionProcess']);
 Route::get('/registration', [UserController::class, 'RegistrationForm']);
 Route::post('/user-add', [UserController::class, 'store']);
+Route::get('/sub-districts', [UserController::class, 'subDistricts']);
+Route::get('/districts', [UserController::class, 'districts']);
