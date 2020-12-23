@@ -4,7 +4,7 @@ body{
 input,select{
     padding: 5px;
     margin: 10px 0px 10px 0px;
-    border: 1px solid #fcb315;
+    border: 1px solid #dc3545;
     border-radius: 50px;
 }
 select,input{
