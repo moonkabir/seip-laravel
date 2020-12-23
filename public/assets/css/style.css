@@ -25,13 +25,15 @@ label,button{
 .mt-30{
     margin-top: 30px;
 }
+.mt-45{
+    margin-top: 45px;
+}
 .full-width{
     width: 100%;
 }
 h3{
-    padding-top: 30px;
-    color: #fcb315;
-    padding-bottom: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 
 }
 h6,h2,h4{
@@ -46,11 +48,13 @@ button{
     width: 100px;
     padding: 10px;
     border: 1px solid #fcb315;
-    border-radius: 25px;
     margin-right: 25px;
     margin-left: 25px;
-    color: #fcb315;
-    background-color: #fff;
+    color: #fff;
+    background-color: #fcb315;
+    margin-bottom: 20px;
+    font-weight:700;
+    text-transform: uppercase;
 }
 
 label span{
@@ -106,4 +110,19 @@ h2{
 }
 .border-bottom{
     border-bottom: 1px solid #fcb315 !important;
+}
+
+button:focus {
+    outline: none; 
+}
+#company_info{
+    display: flex;
+}
+
+.error{
+    color:red;
+    display: block;
+}
+.input_holder input{
+    border: none;
 }
