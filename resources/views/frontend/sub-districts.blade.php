@@ -363,6 +363,7 @@
 {"id":"362","district_id":"46","name":"Shibaloy","bn_name":"শিবালয়","url":"shibaloy.manikganj.gov.bd"},
 {"id":"363","district_id":"46","name":"Doulatpur","bn_name":"দৌলতপুর","url":"doulatpur.manikganj.gov.bd"},
 {"id":"364","district_id":"46","name":"Singiar","bn_name":"সিংগাইর","url":"singiar.manikganj.gov.bd"},
+{"id":"493","district_id":"47","name":"Dhaka(city)","bn_name":"ঢাকা সিটি","url":"city.dhaka.gov.bd"},
 {"id":"365","district_id":"47","name":"Savar","bn_name":"সাভার","url":"savar.dhaka.gov.bd"},
 {"id":"366","district_id":"47","name":"Dhamrai","bn_name":"ধামরাই","url":"dhamrai.dhaka.gov.bd"},
 {"id":"367","district_id":"47","name":"Keraniganj","bn_name":"কেরাণীগঞ্জ","url":"keraniganj.dhaka.gov.bd"},

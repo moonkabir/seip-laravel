@@ -14,7 +14,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <form method="POST" action="{{url('/user-add')}}">
+                <form method="POST" action="{{url('/user-add')}}" enctype="multipart/form-data">
                     {{ method_field('POST') }}
                     @csrf
                     <h3>Choose Course Preference:</h3>
@@ -350,7 +350,7 @@
                         <span>Image size should be 300x300 (Max 100KB) in JPG Format </span>
                         <span class="error">@error('file'){{$message}}@enderror</span>
                     </div>
-                    <h3>Security:</h3>
+                    <!-- <h3>Security:</h3>
                     <div class="d-flex mt-30 justify-content-start">
                         <div class="mr-30">
                             <label>Type the code:<span>*</span></label>
@@ -363,7 +363,7 @@
                         <a href="javascript:void(0)" id="new_captcha" style="float: left; margin-top: 50px;">
                             <img src="http://seip.bitm.org.bd/assets/images/refresh.gif" alt="Reload" title="Reload new code">
                         </a>
-                    </div>
+                    </div> -->
                     <div class="d-flex justify-content-center mt-30">
                         <!-- <button type="submit">Reset</button> -->
                         <button type="submit">Save</button>

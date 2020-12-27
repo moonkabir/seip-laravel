@@ -16,7 +16,7 @@ class SeipRegistration extends Migration
         Schema::create('seipregistrations', function (Blueprint $table) {
             $table->charset = 'utf8mb4';
             $table->collation = 'utf8mb4_general_ci';
-            $table->bigIncrements('id')->primary();
+            $table->bigIncrements('id');
             $table->string('FirstCourse');
             $table->string('SecondCourse');
             $table->string('ThirdCourse');

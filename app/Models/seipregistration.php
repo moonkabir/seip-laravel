@@ -43,6 +43,6 @@ class seipregistration extends Model
         'subject',
         'year',
         'file',
-        'code',
+        // 'code',
     ];
 }

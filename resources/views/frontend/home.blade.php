@@ -1,5 +1,13 @@
 @include('frontend.include.common')
 <div class="col-9">
+    @if(Session::get('srsuccess'))
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>{{Session::get('srsuccess')}}</strong>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    @endif
     <div>
         <h2 class="border-bottom">Overview of SEIP</h2>
         <h6> for Employment Investment Program (SEIP)</h6>

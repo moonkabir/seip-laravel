@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AdminController;
+use App\Models\seipregistration;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,8 +29,34 @@ Route::post('/user-add', [UserController::class, 'store']);
 Route::get('/sub-districts', [UserController::class, 'subDistricts']);
 Route::get('/districts', [UserController::class, 'districts']);
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+// Use of this route in the middleware after controller
+Route::get('/dashboard',[AdminController::class, 'dashboard'])->middleware(['auth'])->name('dashboard');
+Route::get('/dashboard/profile',[AdminController::class, 'profile'])->middleware(['auth'])->name('profile');
+Route::get('/dashboard/students',[AdminController::class, 'students'])->middleware(['auth'])->name('students');
+Route::get('/dashboard/students/{id}/view',[AdminController::class, 'studentinfo'])->middleware(['auth'])->name('studentinfo');
+Route::get('/dashboard/students/{id}/delete',[AdminController::class, 'studentinfodelete'])->middleware(['auth'])->name('studentinfodelete');
+Route::get('/dashboard/course-details',[AdminController::class, 'courseDetails'])->middleware(['auth'])->name('coursedetails');
+Route::get('/dashboard/course-outline',[AdminController::class, 'courseOutline'])->middleware(['auth'])->name('courseoutline');
+Route::get('/dashboard/error',[AdminController::class, 'error'])->middleware(['auth'])->name('error');
+
+// Use of this route after auth in the route
+// Route::get('/dashboard', function () {
+//     return view('admin.dashboard');
+// })->middleware(['auth'])->name('dashboard');
+
+// Route::get('/dashboard/basic-table', function () {
+//     $students = seipregistration::all();
+//     return view('admin.basic-table', compact('students'));
+// })->middleware(['auth'])->name('table');
+
+
+Route::get('/dashboard/map', function () {
+    return view('admin.map');
+})->middleware(['auth'])->name('map');
+
+Route::get('/dashboard/icon', function () {
+    return view('admin.icon');
+})->middleware(['auth'])->name('icon');
+
 
 require __DIR__ . '/auth.php';

@@ -42,37 +42,81 @@ class userController extends Controller
             'FirstCourse' => 'required',
             'SecondCourse' => 'required',
             'ThirdCourse' => 'required',
-            'name' => 'required',
-            'fatherName' => 'required',
-            'motherName' => 'required',
+            'name' => ['required','regex:/^[a-zA-Z .]+$/'],
+            'fatherName' => ['required','regex:/^[a-zA-Z .]+$/'],
+            'motherName' => ['required','regex:/^[a-zA-Z .]+$/'],
             'gender' => 'required',
             'ethnic_group' => 'required',
             'religion' => 'required',
-            'nid' => 'required',
+            'nid' => ['required','regex:/^(?:\0-9)?(?:\d{10}|\d{13}|\d{17})$/'],
             'birthday' => 'required',
-            'mobileNumber' => 'required',
-            'email' => 'required',
+            'mobileNumber' => ['required', 'regex:/^(?:\\+88|88)?(01[3-9]\\d{8})$/'],
+            'email' => ['required', 'regex:/\S+@\S+\.\S+/'],
             'employee' => 'required',
-            'preAddress' => 'required',
-            'preCity' => 'required',
-            'prePostCode' => 'required',
+            'preAddress' => ['required','regex:/^[a-zA-Z0-9 ,.-]+$/'],
+            'preCity' => ['required','regex:/^[a-zA-Z ,.-]+$/'],
+            'prePostCode' => ['required','regex:/^[0-9]*$/'],
             'preDivision' => 'required',
             'preDistrict' => 'required',
             'preSubDistrict' => 'required',
-            'perAddress' => 'required',
-            'perCity' => 'required',
-            'perPostCode' => 'required',
+            'perAddress' => ['required','regex:/^[a-zA-Z0-9 ,.-]+$/'],
+            'perCity' => ['required','regex:/^[a-zA-Z ,.-]+$/'],
+            'perPostCode' => ['required','regex:/^[0-9]*$/'],
             'perDivision' => 'required',
             'perDistrict' => 'required',
             'perSubDistrict' => 'required',
-            'education' => 'required',
-            'institute' => 'required',
-            'subject' => 'required',
-            'year' => 'required',
-            'file' => 'required',
-            'code' => 'required',
+            'education' => ['required',"regex:/^[a-zA-Z ',.-]+$/"],
+            'institute' => ['required','regex:/^[a-zA-Z ,.-]+$/'],
+            'subject' => ['required','regex:/^[a-zA-Z ,.-]+$/'],
+            'year' => ['required','regex:/^[0-9]*$/'],
+            'file' => ['required','image'],
+            // 'code' => 'required',
         ]);
-        seipregistration::create($request->all());
-        return redirect('/');
+// image modification to save data
+        $studentImage = $request->file('file');
+        $imageName = date('Y-M-D-H-i-s').'-'.$studentImage->getClientOriginalName();
+        $directory = 'assets/img/student-images/';
+        $imageUrl = $directory.$imageName;
+        $studentImage->move($directory,$imageName);
+        // return 'success';
+
+        // seipregistration::create($request->all());
+        // return redirect('/');
+
+        $seipregistration = new seipregistration;
+        $seipregistration->FirstCourse = $request->FirstCourse;
+        $seipregistration->SecondCourse = $request->SecondCourse;
+        $seipregistration->ThirdCourse = $request->ThirdCourse;
+        $seipregistration->name = $request->name;
+        $seipregistration->fatherName = $request->fatherName;
+        $seipregistration->motherName = $request->motherName;
+        $seipregistration->gender = $request->gender;
+        $seipregistration->ethnic_group = $request->ethnic_group;
+        $seipregistration->religion = $request->religion;
+        $seipregistration->nid = $request->nid;
+        $seipregistration->birthday = $request->birthday;
+        $seipregistration->mobileNumber = $request->mobileNumber;
+        $seipregistration->email = $request->email;
+        $seipregistration->employee = $request->employee;
+        $seipregistration->preAddress = $request->preAddress;
+        $seipregistration->preCity = $request->preCity;
+        $seipregistration->prePostCode = $request->prePostCode;
+        $seipregistration->preDivision = $request->preDivision;
+        $seipregistration->preDistrict = $request->preDistrict;
+        $seipregistration->preSubDistrict = $request->preSubDistrict;
+        $seipregistration->perAddress = $request->perAddress;
+        $seipregistration->perCity = $request->perCity;
+        $seipregistration->perPostCode = $request->perPostCode;
+        $seipregistration->perDivision = $request->perDivision;
+        $seipregistration->perDistrict = $request->perDistrict;
+        $seipregistration->perSubDistrict = $request->perSubDistrict;
+        $seipregistration->education = $request->education;
+        $seipregistration->institute = $request->institute;
+        $seipregistration->subject = $request->subject;
+        $seipregistration->year = $request->year;
+        $seipregistration->file = $imageUrl;
+        $seipregistration->save();
+        return redirect('/')->with('srsuccess','Registration Created Successfully');
+        // return redirect('/');
     }
 }
