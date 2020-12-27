@@ -6,35 +6,35 @@ use Illuminate\Http\Request;
 
 use App\models\seipregistration;
 
-class UserController extends Controller
+class userController extends Controller
 {
     public function Home()
     {
-        return view('home');
+        return view('frontend.home');
     }
     public function CourseDetails()
     {
-        return view('course-details');
+        return view('frontend.course-details');
     }
     public function CourseOutline()
     {
-        return view('course-outline');
+        return view('frontend.course-outline');
     }
     public function AdmissionProcess()
     {
-        return view('admission-process');
+        return view('frontend.admission-process');
     }
     public function RegistrationForm()
     {
-        return view('registration-form');
+        return view('frontend.registration-form');
     }
     public function subDistricts()
     {
-        return view('sub-districts');
+        return view('frontend.sub-districts');
     }
     public function districts()
     {
-        return view('districts');
+        return view('frontend.districts');
     }
     public function store(Request $request)
     {
@@ -50,7 +50,7 @@ class UserController extends Controller
             'religion' => 'required',
             'nid' => 'required',
             'birthday' => 'required',
-            'mobileNumber' => 'required | ("^(?:\\+88|88)?(01[3-9]\\d{8})$")',
+            'mobileNumber' => 'required',
             'email' => 'required',
             'employee' => 'required',
             'preAddress' => 'required',

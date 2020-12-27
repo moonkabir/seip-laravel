@@ -14,12 +14,21 @@ use App\Http\Controllers\UserController;
 |
 */
 
+// Route::get('/', function () {
+//     return view('fhome');
+// });
 
 Route::get('/', [UserController::class, 'Home']);
 Route::get('/course-details', [UserController::class, 'CourseDetails']);
 Route::get('/course-outline', [UserController::class, 'CourseOutline']);
 Route::get('/admission-process', [UserController::class, 'AdmissionProcess']);
-Route::get('/registration', [UserController::class, 'RegistrationForm']);
+Route::get('/seip-registration', [UserController::class, 'RegistrationForm']);
 Route::post('/user-add', [UserController::class, 'store']);
 Route::get('/sub-districts', [UserController::class, 'subDistricts']);
 Route::get('/districts', [UserController::class, 'districts']);
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__ . '/auth.php';

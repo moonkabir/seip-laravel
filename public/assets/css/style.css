@@ -36,8 +36,8 @@ h3{
     padding-bottom: 20px;
 
 }
-h6,h2,h4{
-    color: #fcb315;
+h6,h4{
+    color: #dc3545;
     padding-top: 5px;
 }
 .mr-30{
@@ -58,7 +58,7 @@ button{
 }
 
 label span{
-    color: #ff0000;
+    color: #dc3545;
 }
 li{
     list-style: none;
@@ -89,10 +89,10 @@ p{
 
 li i.fa{
     font-size: 14px;
-    color: #fcb315;
+    color: #dc3545;
 }
 table{
-    border: 1px solid #fcb315;
+    border: 1px solid #dc3545;
 }
 td{
     padding: 10px;
@@ -109,7 +109,7 @@ h2{
     padding-bottom: 10px;
 }
 .border-bottom{
-    border-bottom: 1px solid #fcb315 !important;
+    border-bottom: 1px solid #dc3545 !important;
 }
 
 button:focus {
