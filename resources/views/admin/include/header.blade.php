@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="{{asset('admin/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css')}}">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{asset('admin/css/style.min.css')}}">
+    <link rel="stylesheet" href="{{asset('admin/css/styleextend.css')}}">
 </head>
 
 <body>
@@ -101,7 +102,9 @@
                         <li>
                             <a class="profile-pic" href="#">
                                 <img src="{{asset('admin/plugins/images/users/varun.jpg')}}" alt="user-img" width="36"
-                                    class="img-circle"><span class="text-white font-medium">Steave</span></a>
+                                    class="img-circle">
+                                <span class="text-white font-medium">{{Auth::user()->name}}</span>
+                            </a>
                         </li>
                         <!-- ============================================================== -->
                         <!-- User profile and search -->
@@ -144,7 +147,7 @@
                                 <span class="hide-menu">Students</span>
                             </a>
                         </li>
-                        <li class="sidebar-item">
+                        <!-- <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{url('/dashboard/icon')}}"
                                 aria-expanded="false">
                                 <i class="fa fa-font" aria-hidden="true"></i>
@@ -156,6 +159,13 @@
                                 aria-expanded="false">
                                 <i class="fa fa-globe" aria-hidden="true"></i>
                                 <span class="hide-menu">Google Map</span>
+                            </a>
+                        </li> -->
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{url('/dashboard/courses')}}"
+                                aria-expanded="false">
+                                <i class="fa fa-columns" aria-hidden="true"></i>
+                                <span class="hide-menu">Courses</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
@@ -172,13 +182,13 @@
                                 <span class="hide-menu">Course Outline</span>
                             </a>
                         </li>
-                        <li class="sidebar-item">
+                        <!-- <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{url('/dashboard/error')}}"
                                 aria-expanded="false">
                                 <i class="fa fa-info-circle" aria-hidden="true"></i>
                                 <span class="hide-menu">Error 404</span>
                             </a>
-                        </li>
+                        </li> -->
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('/logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                                 <i class="fas fa-sign-out-alt" aria-hidden="true"></i>

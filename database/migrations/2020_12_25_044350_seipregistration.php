@@ -51,7 +51,6 @@ class SeipRegistration extends Migration
             $table->string('subject');
             $table->integer('year');
             $table->string('file');
-            $table->string('code');
             $table->timestamps();
         });
     }

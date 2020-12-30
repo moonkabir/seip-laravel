@@ -23,19 +23,9 @@
                             <label>First Preference<span>*</span>:</label>
                             <select name="FirstCourse">
                                 <option value="">Select Course</option>
-                                <option value="Web App Develop- PHP">Web App Develop- PHP</option>
-                                <option value="Web App Develop-Dot Net">Web App Develop-Dot Net</option>
-                                <option value="Affiliate Marketing">Affiliate Marketing</option>
-                                <option value="English &amp; business Communication">English &amp; business Communication</option>
-                                <option value="Server Administration &amp; Cloud Management">Server Administration &amp; Cloud Management</option>
-                                <option value="IT support Technical">IT support Technical</option>
-                                <option value="IT Sales">IT Sales</option>
-                                <option value="Customer Support &amp; Service">Customer Support &amp; Service</option>
-                                <option value="Practical SEO">Practical SEO</option>
-                                <option value="Web design">Web design</option>
-                                <option value="Graphics &amp; Web UI design">Graphics &amp; Web UI design</option>
-                                <option value="Mobile App Develop">Mobile App Develop</option>
-                                <option value="Digital Marketing Course">Digital Marketing Course</option>
+                                @foreach($courses as $course)
+                                <option value="{{$course->name}}">{{$course->name}}</option>
+                                @endforeach
                             </select>
                             <span class="error">@error('FirstCourse'){{$message}}@enderror</span>
                         </div>
@@ -43,19 +33,9 @@
                             <label>Second Preference<span>*</span>:</label>
                             <select name="SecondCourse">
                                 <option value="">Select Course</option>
-                                <option value="Web App Develop- PHP">Web App Develop- PHP</option>
-                                <option value="Web App Develop-Dot Net">Web App Develop-Dot Net</option>
-                                <option value="Affiliate Marketing">Affiliate Marketing</option>
-                                <option value="English &amp; business Communication">English &amp; business Communication</option>
-                                <option value="Server Administration &amp; Cloud Management">Server Administration &amp; Cloud Management</option>
-                                <option value="IT support Technical">IT support Technical</option>
-                                <option value="IT Sales">IT Sales</option>
-                                <option value="Customer Support &amp; Service">Customer Support &amp; Service</option>
-                                <option value="Practical SEO">Practical SEO</option>
-                                <option value="Web design">Web design</option>
-                                <option value="Graphics &amp; Web UI design">Graphics &amp; Web UI design</option>
-                                <option value="Mobile App Develop">Mobile App Develop</option>
-                                <option value="Digital Marketing Course">Digital Marketing Course</option>
+                                @foreach($courses as $course)
+                                <option value="{{$course->name}}">{{$course->name}}</option>
+                                @endforeach
                             </select>
                             <span class="error">@error('SecondCourse'){{$message}}@enderror</span>
                         </div>
@@ -63,19 +43,9 @@
                             <label>Third Preference<span>*</span>:</label>
                             <select name="ThirdCourse">
                                 <option value="">Select Course</option>
-                                <option value="Web App Develop- PHP">Web App Develop- PHP</option>
-                                <option value="Web App Develop-Dot Net">Web App Develop-Dot Net</option>
-                                <option value="Affiliate Marketing">Affiliate Marketing</option>
-                                <option value="English &amp; business Communication">English &amp; business Communication</option>
-                                <option value="Server Administration &amp; Cloud Management">Server Administration &amp; Cloud Management</option>
-                                <option value="IT support Technical">IT support Technical</option>
-                                <option value="IT Sales">IT Sales</option>
-                                <option value="Customer Support &amp; Service">Customer Support &amp; Service</option>
-                                <option value="Practical SEO">Practical SEO</option>
-                                <option value="Web design">Web design</option>
-                                <option value="Graphics &amp; Web UI design">Graphics &amp; Web UI design</option>
-                                <option value="Mobile App Develop">Mobile App Develop</option>
-                                <option value="Digital Marketing Course">Digital Marketing Course</option>
+                                @foreach($courses as $course)
+                                <option value="{{$course->name}}">{{$course->name}}</option>
+                                @endforeach
                             </select>
                             <span class="error">@error('ThirdCourse'){{$message}}@enderror</span>
                         </div>
@@ -212,17 +182,17 @@
                         <div>
                             <label>Monthly Income:</label>
                             <input name="income" type="number">
-                            <!-- <span class="error">@error('income'){{$message}}@enderror</span> -->
+                            <span class="error">@error('income'){{$message}}@enderror</span>
                         </div>
                         <div>
                             <label>Company Name:</label>
                             <input name="companyName" type="text">
-                            <!-- <span class="error">@error('companyName'){{$message}}@enderror</span> -->
+                            <span class="error">@error('companyName'){{$message}}@enderror</span>
                         </div>
                         <div>
                             <label>Designation:</label>
                             <input name="designation" type="text">
-                            <!-- <span class="error">@error('designation'){{$message}}@enderror</span> -->
+                            <span class="error">@error('designation'){{$message}}@enderror</span>
                         </div>
                     </div>
                     <h3>Present Address:</h3>

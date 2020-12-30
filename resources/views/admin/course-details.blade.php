@@ -5,7 +5,7 @@
     <div class="page-breadcrumb bg-white">
         <div class="row align-items-center">
             <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                <h4 class="page-title text-uppercase font-medium font-14">Course Details</h4>
+                <h4 class="page-title text-uppercase font-medium font-14">Courses Table</h4>
             </div>
             <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                 <div class="d-md-flex">
@@ -28,39 +28,51 @@
         <!-- Start Page Content -->
         <!-- ============================================================== -->
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-sm-12">
                 <div class="white-box">
-                    <form class="form-horizontal form-material" action="" >
-                        <div class="form-group mb-4">
-                            <label class="col-md-12 p-0">Name of Course</label>
-                            <div class="col-md-12 border-bottom p-0">
-                                <input type="text" placeholder="Web Design Course"class="form-control p-0 border-0"> 
-                            </div>
+                    <div class="d-flex justify-content-between">
+                        <h3 class="box-title">Course Details Table</h3>
+                        <a href="{{url('/dashboard/course-details/course-details-add')}}" class="add-new-course"> Add Course Details</a>
+                    </div>
+                    @if(Session::get('cddsuccess'))
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                            <strong>{{Session::get('cddsuccess')}}</strong>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
                         </div>
-                        <div class="form-group mb-4">
-                            <label class="col-md-12 p-0">Prerequisite</label>
-                            <div class="col-md-12 border-bottom p-0">
-                                <input type="text" placeholder="Must have the basic knowledge on HTML & CSS"class="form-control p-0 border-0"> 
-                            </div>
-                        </div>
-                        <div class="form-group mb-4">
-                            <label class="col-md-12 p-0">Expected Benefits to the Sector</label>
-                            <div class="col-md-12 border-bottom p-0">
-                                <textarea rows="4" class="form-control p-0 border-0"></textarea>
-                            </div>
-                        </div>
-                        <div class="form-group mb-4">
-                            <label class="col-md-12 p-0">Job Placement</label>
-                            <div class="col-md-12 border-bottom p-0">
-                                <textarea rows="3" class="form-control p-0 border-0"></textarea>
-                            </div>
-                        </div>
-                        <div class="form-group mb-4">
-                            <div class="col-sm-12">
-                                <button class="btn btn-success">Submit Course</button>
-                            </div>
-                        </div>
-                    </form>
+                    @endif
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr class="text-center">
+                                    <th class="border-top-0">ID</th>
+                                    <th class="border-top-0">Course Name</th>
+                                    <th class="border-top-0 w-150">Prerequisite</th>
+                                    <th class="border-top-0 w-300">Expected Benefits to the Sector</th>
+                                    <th class="border-top-0">Job Placement</th>
+                                    <th class="border-top-0">Create Date</th>
+                                    <th class="border-top-0">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach($coursedetails as $coursedetail)
+                                <tr>
+                                    <td>{{$coursedetail->id}}</td>
+                                    <td>{{$coursedetail->name}}</td>
+                                    <td>{{$coursedetail->prerequisite}}</td>
+                                    <td>{!!$coursedetail->benefits!!}</td>
+                                    <td>{{$coursedetail->jobPlacement}}</td>
+                                    <td>{{$coursedetail->created_at}}</td>
+                                    
+                                    <td>
+                                    <a href="{{url('/dashboard/course-details/'.$coursedetail->id.'/delete')}}" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></a>
+                                    </td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>

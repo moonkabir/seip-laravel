@@ -1,0 +1,15 @@
+.add-new-course{
+    color: #000000;
+}
+.add-new-course:hover{
+    color: #666666;
+}
+.error{
+    color: #ff0000;
+}
+.w-150{
+    width: 150px;
+}
+.w-300{
+    width: 300px;
+}

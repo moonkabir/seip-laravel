@@ -63,6 +63,12 @@ label span{
 li{
     list-style: none;
 }
+.course-details td ul li{
+    list-style: circle;
+}
+.course-details td ol li{
+    list-style: upper-roman;
+}
 a,a:hover{
     text-decoration: none;
 }
@@ -99,7 +105,6 @@ td{
     font-size: 14px;
 }
 ul{
-    padding-left: 0;
     margin-bottom: 8px;
 }
 p{
@@ -125,4 +130,10 @@ button:focus {
 }
 .input_holder input{
     border: none;
+}
+.w-150{
+    width: 150px;
+}
+.w-300{
+    width: 300px;
 }

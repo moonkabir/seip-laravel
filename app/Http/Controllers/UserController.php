@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\courses;
+use App\Models\courses_details;
+use App\Models\courses_outlines;
 use Illuminate\Http\Request;
 
 use App\models\seipregistration;
@@ -14,11 +17,14 @@ class userController extends Controller
     }
     public function CourseDetails()
     {
-        return view('frontend.course-details');
+        $courseDetails = courses_details::all();
+        // return $courseDetails;
+        return view('frontend.course-details',compact('courseDetails'));
     }
     public function CourseOutline()
     {
-        return view('frontend.course-outline');
+        $courseOutlines = courses_outlines::all();
+        return view('frontend.course-outline',compact('courseOutlines'));
     }
     public function AdmissionProcess()
     {
@@ -26,7 +32,8 @@ class userController extends Controller
     }
     public function RegistrationForm()
     {
-        return view('frontend.registration-form');
+        $courses = courses::where('status',1)->get();
+        return view('frontend.registration-form',compact('courses'));
     }
     public function subDistricts()
     {
@@ -53,6 +60,9 @@ class userController extends Controller
             'mobileNumber' => ['required', 'regex:/^(?:\\+88|88)?(01[3-9]\\d{8})$/'],
             'email' => ['required', 'regex:/\S+@\S+\.\S+/'],
             'employee' => 'required',
+            'income' => ['regex:/(^$|[0-9])/'],
+            'companyName' => ['regex:/^[a-zA-Z0-9 ,.-]|null+$/'],
+            'designation' => ['regex:/^[a-zA-Z0-9 ,.-]|null+$/'],
             'preAddress' => ['required','regex:/^[a-zA-Z0-9 ,.-]+$/'],
             'preCity' => ['required','regex:/^[a-zA-Z ,.-]+$/'],
             'prePostCode' => ['required','regex:/^[0-9]*$/'],
@@ -72,16 +82,13 @@ class userController extends Controller
             'file' => ['required','image'],
             // 'code' => 'required',
         ]);
-// image modification to save data
+        // image modification to save data
         $studentImage = $request->file('file');
         $imageName = date('Y-M-D-H-i-s').'-'.$studentImage->getClientOriginalName();
         $directory = 'assets/img/student-images/';
         $imageUrl = $directory.$imageName;
         $studentImage->move($directory,$imageName);
-        // return 'success';
-
-        // seipregistration::create($request->all());
-        // return redirect('/');
+        
 
         $seipregistration = new seipregistration;
         $seipregistration->FirstCourse = $request->FirstCourse;
@@ -98,6 +105,9 @@ class userController extends Controller
         $seipregistration->mobileNumber = $request->mobileNumber;
         $seipregistration->email = $request->email;
         $seipregistration->employee = $request->employee;
+        $seipregistration->income = $request->income;
+        $seipregistration->companyName = $request->companyName;
+        $seipregistration->designation = $request->designation;
         $seipregistration->preAddress = $request->preAddress;
         $seipregistration->preCity = $request->preCity;
         $seipregistration->prePostCode = $request->prePostCode;

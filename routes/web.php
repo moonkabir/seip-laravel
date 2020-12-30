@@ -32,11 +32,32 @@ Route::get('/districts', [UserController::class, 'districts']);
 // Use of this route in the middleware after controller
 Route::get('/dashboard',[AdminController::class, 'dashboard'])->middleware(['auth'])->name('dashboard');
 Route::get('/dashboard/profile',[AdminController::class, 'profile'])->middleware(['auth'])->name('profile');
+
+// students
 Route::get('/dashboard/students',[AdminController::class, 'students'])->middleware(['auth'])->name('students');
 Route::get('/dashboard/students/{id}/view',[AdminController::class, 'studentinfo'])->middleware(['auth'])->name('studentinfo');
 Route::get('/dashboard/students/{id}/delete',[AdminController::class, 'studentinfodelete'])->middleware(['auth'])->name('studentinfodelete');
+
+// courses
+Route::get('/dashboard/courses',[AdminController::class, 'courses'])->middleware(['auth'])->name('courses');
+Route::get('/dashboard/courses/add-course',[AdminController::class, 'addcourse'])->middleware(['auth'])->name('addcourse');
+Route::post('/dashboard/courses/add-course/add-course-save',[AdminController::class, 'addcoursesave'])->middleware(['auth'])->name('addcoursesave');
+Route::get('/dashboard/courses/{id}/delete',[AdminController::class, 'addcoursedelete'])->middleware(['auth'])->name('addcoursedelete');
+Route::get('/dashboard/courses/{id}/published',[AdminController::class, 'addcoursepublished'])->middleware(['auth'])->name('addcoursepublished');
+Route::get('/dashboard/courses/{id}/unpublished',[AdminController::class, 'addcourseunpublished'])->middleware(['auth'])->name('addcourseunpublished');
+
+// course details
 Route::get('/dashboard/course-details',[AdminController::class, 'courseDetails'])->middleware(['auth'])->name('coursedetails');
+Route::get('/dashboard/course-details/{id}/delete',[AdminController::class, 'courseDetailsDelete'])->middleware(['auth'])->name('courseDetailsDelete');
+Route::get('/dashboard/course-details/course-details-add',[AdminController::class, 'courseDetailsAdd'])->middleware(['auth'])->name('courseDetailsAdd');
+Route::post('/dashboard/course-details/course-details-add/course-details-data-save',[AdminController::class, 'courseDetailsDataStore'])->middleware(['auth'])->name('courseDetailsDataStore');
+
+// course Outline
 Route::get('/dashboard/course-outline',[AdminController::class, 'courseOutline'])->middleware(['auth'])->name('courseoutline');
+Route::get('/dashboard/course-outline/course-outline-add',[AdminController::class, 'courseOutlineadd'])->middleware(['auth'])->name('courseOutlineadd');
+Route::post('/dashboard/course-outline/course-outline-add/course-outline-data-save',[AdminController::class, 'courseOutlineDataStore'])->middleware(['auth'])->name('courseOutlineDataStore');
+Route::get('/dashboard/course-outline/{id}/delete',[AdminController::class, 'courseOutlineDelete'])->middleware(['auth'])->name('courseOutlineDelete');
+
 Route::get('/dashboard/error',[AdminController::class, 'error'])->middleware(['auth'])->name('error');
 
 // Use of this route after auth in the route

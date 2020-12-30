@@ -2,7 +2,7 @@
             <!-- ============================================================== -->
             <!-- footer -->
             <!-- ============================================================== -->
-            <footer class="footer text-center"> 2020 Admin brought to you by <a
+            <footer class="footer text-center"> 2020 Admin brought by <a
                     href="https://pencilbox.edu.bd/">pencilbox.edu.bd</a>
             </footer>
             <!-- ============================================================== -->
@@ -36,6 +36,11 @@
     <script src="{{asset('admin/plugins/bower_components/chartist/dist/chartist.min.js')}}"></script>
     <script src="{{asset('admin/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js')}}"></script>
     <script src="{{asset('admin/js/pages/dashboards/dashboard1.js')}}"></script>
+    <script src="https://cdn.ckeditor.com/4.15.1/standard/ckeditor.js"></script>
+    <script>
+        // CKEDITOR.replace( 'prerequisite' );
+        CKEDITOR.replace( 'benefits' );
+    </script>
 </body>
 
 </html>
