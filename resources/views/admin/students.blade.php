@@ -10,6 +10,16 @@
             <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                 <div class="d-md-flex">
                     <ol class="breadcrumb ml-auto">
+                        <li class=" in">
+                            <form role="search" class="student-search d-none d-md-block mr-3"  action="{{url('/dashboard/students/search')}}" method="GET">
+                                <input type="text" placeholder="Search By Email" class="form-control mt-0" name ="email">
+                                <!-- <a href="" class="active"> -->
+                                    <button type="submit" class="active">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                <!-- </a> -->
+                            </form>
+                        </li>
                         <li><a href="{{url('/dashboard')}}">Dashboard</a></li>
                     </ol>
                 </div>
@@ -43,7 +53,7 @@
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th class="border-top-0">ID</th>
+                                    <th class="border-top-0">Sl.</th>
                                     <th class="border-top-0">Student Name</th>
                                     <th class="border-top-0">First Preference</th>
                                     <th class="border-top-0">Second Preference</th>
@@ -53,9 +63,10 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @php($i = 1)
                                 @foreach($students as $student)
                                 <tr>
-                                    <td>{{$student->id}}</td>
+                                    <td>{{$i++}}</td>
                                     <td>{{$student->name}}</td>
                                     <td>{{$student->FirstCourse}}</td>
                                     <td>{{$student->SecondCourse}}</td>

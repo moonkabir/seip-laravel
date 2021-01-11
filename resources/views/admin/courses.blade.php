@@ -81,14 +81,17 @@
                                 @foreach($courses as $course)
                                 <tr>
                                     <td>{{$course->id}}</td>
-                                    <td>{{$course->name}}</td> 
-                                    <td>{{$course->status==1?'Published':'Unpublished'}}</td> 
-                                    <td>{{$course->created_at}}</td> 
-                                    
+                                    <td>{{$course->name}}</td>
+                                    <td>{{$course->status==1?'Published':'Unpublished'}}</td>
+                                    <td>{{$course->created_at}}</td>
+
                                     <td>
                                         <a href="{{url('/dashboard/courses/'.$course->id.'/delete')}}" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></a>
+                                        @if($course->status==1)
+                                        <a href="{{url('/dashboard/courses/'.$course->id.'/unpublished')}}" class="btn btn-sm btn-success"><i class="fas fa-times"></i></a>
+                                        @else
                                         <a href="{{url('/dashboard/courses/'.$course->id.'/published')}}" class="btn btn-sm btn-danger"><i class="fas fa-check"></i></a>
-                                        <a href="{{url('/dashboard/courses/'.$course->id.'/unpublished')}}" class="btn btn-sm btn-danger"><i class="fas fa-cut"></i></a>
+                                        @endif
                                     </td>
                                 </tr>
                                 @endforeach

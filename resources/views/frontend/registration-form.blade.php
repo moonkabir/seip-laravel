@@ -14,6 +14,14 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
+                @if(Session::get('srsuccess'))
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <strong>{{Session::get('srsuccess')}}</strong>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                @endif
                 <form method="POST" action="{{url('/user-add')}}" enctype="multipart/form-data">
                     {{ method_field('POST') }}
                     @csrf
@@ -151,8 +159,9 @@
                     <div class="d-flex mt-30 justify-content-start">
                         <div class="mr-30">
                             <label>National ID/ Birth ID:<span>*</span></label>
-                            <input name="nid" type="number">
+                            <input name="nid" type="text" onblur="checkStudentNid(this.value)">
                             <span class="error">@error('nid'){{$message}}@enderror</span>
+                            <span class="text-danger" id="nidRes"></span>
                         </div>
                         <div>
                             <label>Date of Birth:<span>*</span></label>
@@ -163,13 +172,15 @@
                     <div class="d-flex mt-30 justify-content-between">
                         <div>
                             <label>Mobile:<span>*</span></label>
-                            <input name="mobileNumber" type="number">
+                            <input name="mobileNumber" type="text" onblur="checkStudentMobile(this.value)">
                             <span class="error">@error('mobileNumber'){{$message}}@enderror</span>
+                            <span class="text-danger" id="mobileRes"></span>
                         </div>
                         <div>
                             <label>Email:<span>*</span></label>
-                            <input name="email" type="email">
+                            <input name="email" type="email" onblur="checkStudentEmail1(this.value)">
                             <span class="error">@error('email'){{$message}}@enderror</span>
+                            <span class="text-danger" id="emailRes1"></span>
                         </div>
                         <div class="d-flex mt-45">
                             <label>Is Employed?<span>*</span></label>
@@ -181,7 +192,7 @@
                     <div id="company_info" class="mt-30 justify-content-between">
                         <div>
                             <label>Monthly Income:</label>
-                            <input name="income" type="number">
+                            <input name="income" type="text">
                             <span class="error">@error('income'){{$message}}@enderror</span>
                         </div>
                         <div>
@@ -209,7 +220,7 @@
                         </div>
                         <div>
                             <label>Post Code:<span>*</span></label>
-                            <input name="prePostCode" type="number">
+                            <input name="prePostCode" type="text">
                             <span class="error">@error('prePostCode'){{$message}}@enderror</span>
                         </div>
                     </div>
@@ -256,7 +267,7 @@
                         </div>
                         <div>
                             <label>Post Code:<span>*</span></label>
-                            <input name="perPostCode" type="number">
+                            <input name="perPostCode" type="text">
                             <span class="error">@error('perPostCode'){{$message}}@enderror</span>
                         </div>
                     </div>
@@ -310,7 +321,7 @@
                         </div>
                         <div>
                             <label>Year:<span>*</span></label>
-                            <input name="year" type="number">
+                            <input name="year" type="text">
                             <span class="error">@error('year'){{$message}}@enderror</span>
                         </div>
                     </div>
@@ -336,7 +347,7 @@
                     </div> -->
                     <div class="d-flex justify-content-center mt-30">
                         <!-- <button type="submit">Reset</button> -->
-                        <button type="submit">Save</button>
+                        <button type="submit" id="regBtn1">Save</button>
                     </div>
                 </form>
             </div>

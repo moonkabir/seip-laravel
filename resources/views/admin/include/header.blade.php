@@ -53,7 +53,7 @@
                             <!-- Dark Logo icon -->
                             <img src="{{asset('admin/plugins/images/logo-icon.png')}}" alt="homepage" />
                         </b>
-                        
+
                         <!--End Logo icon -->
                         <!-- Logo text -->
                         <span class="logo-text">
@@ -83,31 +83,19 @@
                     <!-- ============================================================== -->
                     <!-- Right side toggle and nav items -->
                     <!-- ============================================================== -->
-                    <ul class="navbar-nav ml-auto d-flex align-items-center">
-
+                    <ul class="navbar-nav ml-auto user-header">
                         <!-- ============================================================== -->
-                        <!-- Search -->
-                        <!-- ============================================================== -->
-                        <li class=" in">
-                            <form role="search" class="app-search d-none d-md-block mr-3">
-                                <input type="text" placeholder="Search..." class="form-control mt-0">
-                                <a href="" class="active">
-                                    <i class="fa fa-search"></i>
-                                </a>
-                            </form>
-                        </li>
-                        <!-- ============================================================== -->
-                        <!-- User profile and search -->
+                        <!-- User profile -->
                         <!-- ============================================================== -->
                         <li>
-                            <a class="profile-pic" href="#">
-                                <img src="{{asset('admin/plugins/images/users/varun.jpg')}}" alt="user-img" width="36"
+                            <a class="profile-pic" href="{{url('/dashboard/profile')}}">
+                                <img src="{{asset(Auth::user()->photo)}}" alt="user-img" width="36"
                                     class="img-circle">
-                                <span class="text-white font-medium">{{Auth::user()->name}}</span>
+                                <a class="text-white font-medium" href="{{url('/dashboard/profile')}}">{{Auth::user()->name}}</a>
                             </a>
                         </li>
                         <!-- ============================================================== -->
-                        <!-- User profile and search -->
+                        <!-- User profile -->
                         <!-- ============================================================== -->
                     </ul>
                 </div>
@@ -119,6 +107,7 @@
         <!-- ============================================================== -->
         <!-- Left Sidebar - style you can find in sidebar.scss  -->
         <!-- ============================================================== -->
+        
         <aside class="left-sidebar" data-sidebarbg="skin6">
             <!-- Sidebar scroll-->
             <div class="scroll-sidebar">
@@ -134,61 +123,70 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{url('/dashboard/profile')}}"
-                                aria-expanded="false">
-                                <i class="fa fa-user" aria-hidden="true"></i>
-                                <span class="hide-menu">Profile</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{url('/dashboard/students')}}"
                                 aria-expanded="false">
                                 <i class="fa fa-table" aria-hidden="true"></i>
                                 <span class="hide-menu">Students</span>
                             </a>
                         </li>
-                        <!-- <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{url('/dashboard/icon')}}"
-                                aria-expanded="false">
-                                <i class="fa fa-font" aria-hidden="true"></i>
-                                <span class="hide-menu">Icon</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{url('/dashboard/map')}}"
-                                aria-expanded="false">
-                                <i class="fa fa-globe" aria-hidden="true"></i>
-                                <span class="hide-menu">Google Map</span>
-                            </a>
-                        </li> -->
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{url('/dashboard/courses')}}"
-                                aria-expanded="false">
-                                <i class="fa fa-columns" aria-hidden="true"></i>
-                                <span class="hide-menu">Courses</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{url('/dashboard/course-details')}}"
-                                aria-expanded="false">
-                                <i class="fa fa-columns" aria-hidden="true"></i>
-                                <span class="hide-menu">Course Details</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{url('/dashboard/course-outline')}}"
-                                aria-expanded="false">
-                                <i class="fa fa-columns" aria-hidden="true"></i>
-                                <span class="hide-menu">Course Outline</span>
-                            </a>
-                        </li>
-                        <!-- <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{url('/dashboard/error')}}"
-                                aria-expanded="false">
-                                <i class="fa fa-info-circle" aria-hidden="true"></i>
-                                <span class="hide-menu">Error 404</span>
-                            </a>
-                        </li> -->
+                        @php
+                            $usersUrl = url('/dashboard/users');
+                            $coursesUrl = url('/dashboard/courses');
+                            $courseDetailsUrl = url('/dashboard/course-details');
+                            $courseOutlineUrl = url('/dashboard/course-outline');
+                            $superAdmin = <<<EOT
+			    <li class="sidebar-item">
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{$usersUrl}"
+                                    aria-expanded="false">
+                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                    <span class="hide-menu">Users</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{$coursesUrl}"
+                                    aria-expanded="false">
+                                    <i class="fa fa-columns" aria-hidden="true"></i>
+                                    <span class="hide-menu">Courses</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{$courseDetailsUrl}"
+                                    aria-expanded="false">
+                                    <i class="fa fa-columns" aria-hidden="true"></i>
+                                    <span class="hide-menu">Course Details</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{$courseOutlineUrl}"
+                                    aria-expanded="false">
+                                    <i class="fa fa-columns" aria-hidden="true"></i>
+                                    <span class="hide-menu">Course Outline</span>
+                                </a>
+                            </li>
+EOT;
+                            $admin = <<<EOT
+                            <li class="sidebar-item">
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{$courseDetailsUrl}"
+                                    aria-expanded="false">
+                                    <i class="fa fa-columns" aria-hidden="true"></i>
+                                    <span class="hide-menu">Course Details</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{$courseOutlineUrl}"
+                                    aria-expanded="false">
+                                    <i class="fa fa-columns" aria-hidden="true"></i>
+                                    <span class="hide-menu">Course Outline</span>
+                                </a>
+                            </li>
+EOT;
+                            $UserRole = Auth::user()->role;
+                            if ($UserRole === 1)
+                                echo $superAdmin; 
+                            elseif ($UserRole === 2)
+                                echo $admin;
+                        @endphp
+                        
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('/logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                                 <i class="fas fa-sign-out-alt" aria-hidden="true"></i>
@@ -208,9 +206,8 @@
         <!-- ============================================================== -->
         <!-- End Left Sidebar - style you can find in sidebar.scss  -->
         <!-- ============================================================== -->
-        
+
         <!-- ============================================================== -->
         <!-- Page wrapper  -->
         <!-- ============================================================== -->
         <div class="page-wrapper">
-            

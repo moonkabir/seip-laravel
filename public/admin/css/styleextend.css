@@ -13,3 +13,38 @@
 .w-300{
     width: 300px;
 }
+.student-search{
+    position: relative;
+    margin: 0;
+}
+.student-search .form-control{
+    /* border: none; */
+    font-size: 13px;
+    color: #4c5667;
+    padding-left: 20px;
+    padding-right: 40px;
+    background: rgba(255, 255, 255, 0.9);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    height: 30px;
+    font-weight: 600;
+    width: 250px;
+    display: inline-block;
+    line-height: 30px;
+    margin-top: 15px;
+    border-radius: 40px;
+    -webkit-transition: .5s ease-out;
+    -o-transition: .5s ease-out;
+    transition: .5s ease-out;
+}
+.student-search .active{
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    color: #4c5667;
+    border: 0;
+    background: none;
+}
+.user-header li{
+    margin-right: 25px;
+}

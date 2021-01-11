@@ -110,3 +110,52 @@ $('#per_district').change(function () {
         }
     });
 });
+
+function checkStudentEmail1(email) {
+    var xmlHttp = new XMLHttpRequest();
+    var server = 'http://127.0.0.1:8000/student-email-check/'+email;
+    xmlHttp.open('GET', server);
+    xmlHttp.onreadystatechange = function() {
+        if(xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+            document.getElementById('emailRes1').innerHTML = xmlHttp.responseText;
+            if(xmlHttp.responseText == '* This email already exists. Try another email to register.') {
+                document.getElementById('regBtn1').disabled = true;
+            } else {
+                document.getElementById('regBtn1').disabled = false;
+            }
+        }
+    }
+    xmlHttp.send();
+}
+function checkStudentMobile(mobile) {
+    var xmlHttp = new XMLHttpRequest();
+    var server = 'http://127.0.0.1:8000/student-mobile-check/'+mobile;
+    xmlHttp.open('GET', server);
+    xmlHttp.onreadystatechange = function() {
+        if(xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+            document.getElementById('mobileRes').innerHTML = xmlHttp.responseText;
+            if(xmlHttp.responseText == '* This mobile number already exists. Try another mobile number to register.') {
+                document.getElementById('regBtn1').disabled = true;
+            } else {
+                document.getElementById('regBtn1').disabled = false;
+            }
+        }
+    }
+    xmlHttp.send();
+}
+function checkStudentNid(nid) {
+    var xmlHttp = new XMLHttpRequest();
+    var server = 'http://127.0.0.1:8000/student-nid-check/'+nid;
+    xmlHttp.open('GET', server);
+    xmlHttp.onreadystatechange = function() {
+        if(xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+            document.getElementById('nidRes').innerHTML = xmlHttp.responseText;
+            if(xmlHttp.responseText == '* This nid number already exists.') {
+                document.getElementById('regBtn1').disabled = true;
+            } else {
+                document.getElementById('regBtn1').disabled = false;
+            }
+        }
+    }
+    xmlHttp.send();
+}

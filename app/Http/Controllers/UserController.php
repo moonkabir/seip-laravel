@@ -60,9 +60,9 @@ class userController extends Controller
             'mobileNumber' => ['required', 'regex:/^(?:\\+88|88)?(01[3-9]\\d{8})$/'],
             'email' => ['required', 'regex:/\S+@\S+\.\S+/'],
             'employee' => 'required',
-            'income' => ['regex:/(^$|[0-9])/'],
-            'companyName' => ['regex:/^[a-zA-Z0-9 ,.-]|null+$/'],
-            'designation' => ['regex:/^[a-zA-Z0-9 ,.-]|null+$/'],
+            'income' => 'sometimes|nullable|required_if:employee,yes|regex:/^[0-9,.-]+$/',
+            'companyName' => 'sometimes|nullable|required_if:employee,yes|regex:/^[a-zA-Z0-9 ,.-]+$/',
+            'designation' => 'sometimes|nullable|required_if:employee,yes|regex:/^[a-zA-Z0-9 ,.-]+$/',
             'preAddress' => ['required','regex:/^[a-zA-Z0-9 ,.-]+$/'],
             'preCity' => ['required','regex:/^[a-zA-Z ,.-]+$/'],
             'prePostCode' => ['required','regex:/^[0-9]*$/'],
@@ -88,7 +88,7 @@ class userController extends Controller
         $directory = 'assets/img/student-images/';
         $imageUrl = $directory.$imageName;
         $studentImage->move($directory,$imageName);
-        
+
 
         $seipregistration = new seipregistration;
         $seipregistration->FirstCourse = $request->FirstCourse;
@@ -126,7 +126,32 @@ class userController extends Controller
         $seipregistration->year = $request->year;
         $seipregistration->file = $imageUrl;
         $seipregistration->save();
-        return redirect('/')->with('srsuccess','Registration Created Successfully');
+        return back()->with('srsuccess','Thank you for registering!');
         // return redirect('/');
+    }
+
+    public function studentEmailCheck($email) {
+        $student = seipregistration::where('email', $email)->first();
+        if($student) {
+            echo "* This email already exists. Try another email to register.";
+        } else {
+            echo "<span class='text-success'>* This email is avaliable to register.</span>";
+        }
+    }
+    public function studentMobileCheck($mobile) {
+        $student = seipregistration::where('mobileNumber', $mobile)->first();
+        if($student) {
+            echo "* This mobile number already exists. Try another mobile number to register.";
+        } else {
+            echo "<span class='text-success'>* This Mobile number is avaliable to register.</span>";
+        }
+    }
+    public function studentNidCheck($nid) {
+        $student = seipregistration::where('nid', $nid)->first();
+        if($student) {
+            echo "* This nid number already exists.";
+        } else {
+            echo "<span class='text-success'>* This nid number is avaliable to register.</span>";
+        }
     }
 }

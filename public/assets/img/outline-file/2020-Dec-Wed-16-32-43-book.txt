@@ -1,9 +1,0 @@
-math.garden
-libarary genesis
-
-mathlab software
-owlframe mathematica software
-
-
-digital signal processing(2):
-jhon g.proakis
