@@ -11,7 +11,7 @@
     <meta name="description"
         content="Ample Admin Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
     <meta name="robots" content="noindex,nofollow">
-    <title>Ample Admin Lite Template by WrapPixel</title>
+    <title>PencilBox Seip Admin Panel</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/ample-admin-lite/" />
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="{{asset('admin/plugins/images/favicon.png')}}">
@@ -51,15 +51,8 @@
                         <!-- Logo icon -->
                         <b class="logo-icon">
                             <!-- Dark Logo icon -->
-                            <img src="{{asset('admin/plugins/images/logo-icon.png')}}" alt="homepage" />
+                            <img src="{{asset('admin/plugins/images/logo.png')}}" alt="homepage" style="height:80px;width:230px;"/>
                         </b>
-
-                        <!--End Logo icon -->
-                        <!-- Logo text -->
-                        <span class="logo-text">
-                            <!-- dark Logo text -->
-                            <img src="{{asset('admin/plugins/images/logo-text.png')}}" alt="homepage" />
-                        </span>
                     </a>
                     <!-- ============================================================== -->
                     <!-- End Logo -->

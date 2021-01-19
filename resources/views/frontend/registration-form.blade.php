@@ -229,14 +229,14 @@
                             <label>Division:<span>*</span></label>
                             <select name="preDivision" id="pre_division">
                                 <option value="" selected="selected">Select Division</option>
-                                <option value="4">Barisal</option>
-                                <option value="1">Chittagong</option>
-                                <option value="6">Dhaka</option>
-                                <option value="3">Khulna</option>
-                                <option value="2">Rajshahi</option>
-                                <option value="7">Rangpur</option>
-                                <option value="5">Sylhet</option>
-                                <option value="7">Mymensingh</option>
+                                <option value="Barisal">Barisal</option>
+                                <option value="Chittagong">Chittagong</option>
+                                <option value="Dhaka">Dhaka</option>
+                                <option value="Khulna">Khulna</option>
+                                <option value="Rajshahi">Rajshahi</option>
+                                <option value="Rangpur">Rangpur</option>
+                                <option value="Sylhet">Sylhet</option>
+                                <option value="Mymensingh">Mymensingh</option>
                             </select>
                             <span class="error">@error('preDivision'){{$message}}@enderror</span>
                         </div>
@@ -276,14 +276,14 @@
                             <label>Division:<span>*</span></label>
                             <select name="perDivision" id="per_division">
                                 <option value="" selected="selected">Select Division</option>
-                                <option value="4">Barisal</option>
-                                <option value="1">Chittagong</option>
-                                <option value="6">Dhaka</option>
-                                <option value="3">Khulna</option>
-                                <option value="2">Rajshahi</option>
-                                <option value="7">Rangpur</option>
-                                <option value="5">Sylhet</option>
-                                <option value="7">Mymensingh</option>
+                                <option value="Barisal">Barisal</option>
+                                <option value="Chittagong">Chittagong</option>
+                                <option value="Dhaka">Dhaka</option>
+                                <option value="Khulna">Khulna</option>
+                                <option value="Rajshahi">Rajshahi</option>
+                                <option value="Rangpur">Rangpur</option>
+                                <option value="Sylhet">Sylhet</option>
+                                <option value="Mymensingh">Mymensingh</option>
                             </select>
                             <span class="error">@error('perDivision'){{$message}}@enderror</span>
                         </div>

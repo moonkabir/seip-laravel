@@ -73,7 +73,6 @@
                                     <th class="border-top-0">NAME</th>
                                     <th class="border-top-0">STATUS</th>
                                     <th class="border-top-0">DATE</th>
-                                    <th class="border-top-0">Students</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -83,7 +82,6 @@
                                     <td>{{$course->name}}</td>
                                     <td>{{$course->status == 1 ?'Published' : 'Unpublished'}}</td>
                                     <td class="txt-oflo">{{$course->created_at}}</td>
-                                    <td><span class="text-success">$24</span></td>
                                 </tr>
                                 @endforeach
                             </tbody>
